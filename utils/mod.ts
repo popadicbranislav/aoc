@@ -42,8 +42,10 @@ export async function prepareDayFiles(year: string, day: string) {
     ensureFileSync(`./${year}/${day}/README.md`);
     Deno.writeTextFileSync(
       `./${year}/${day}/mod.ts`,
-      `export default function solve(data: string[]) {
-  console.log('hello from day ${day}', data)
+      `export default function solve(data: string[]): number {
+  console.log('hello from day ${day}', data);
+
+  return data.length;
 }`,
     );
     Deno.writeTextFileSync(
@@ -56,7 +58,7 @@ Deno.test(function solutionTest() {
     '1 2 3 4 5', 
     'a b c d e'
   ]
-  solve(sampleData)
+  expect(solve(sampleData)).toBe(2)
 })`,
     );
   }
