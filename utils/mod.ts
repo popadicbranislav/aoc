@@ -3,7 +3,7 @@ import { resolve } from "jsr:@std/path";
 import { ensureFileSync } from "jsr:@std/fs/ensure-file";
 import { existsSync } from "jsr:@std/fs";
 
-export function getDate() {
+export function getDate(): { day: string; year: string } {
   const dayNumber = Deno.args[0] || new Date().getDate();
   const year = Deno.args[1] || new Date().getFullYear() + "";
   return {
@@ -18,7 +18,7 @@ export function getData(year: string, day: string): string[] {
   return input.split("\n");
 }
 
-export async function getSolveFn(year: string, day: string) {
+export async function getSolveFn(year: string, day: string): Promise<(data: string[]) => void> {
   const path = resolve(Deno.cwd(), `./${year}/${day}/mod.ts`);
   const solveFn = (await import(path)).default as (data: string[]) => void;
   assert(
