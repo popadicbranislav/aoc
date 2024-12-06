@@ -1,5 +1,5 @@
-import { expect } from 'jsr:@std/expect'
-import { part1, part2 } from './mod.ts'
+import { expect } from "jsr:@std/expect";
+import { part1, part2 } from "./mod.ts";
 
 Deno.test(function part1Test() {
   const sampleData = `MMMSXXMASM
@@ -11,10 +11,10 @@ XXAMMXXAMA
 SMSMSASXSS
 SAXAMASAAA
 MAMMMXMMMM
-MXMXAXMASX`.split('\n')
+MXMXAXMASX`.split("\n");
 
-  expect(part1(sampleData)).toBe(18)
-})
+  expect(part1(sampleData)).toBe(18);
+});
 
 Deno.test(function part2Test() {
   const sampleData = `MMMSXXMASM
@@ -26,7 +26,7 @@ XXAMMXXAMA
 SMSMSASXSS
 SAXAMASAAA
 MAMMMXMMMM
-MXMXAXMASX`.split('\n')
+MXMXAXMASX`.split("\n");
 
-  expect(part2(sampleData)).toBe(9)
-})
+  expect(part2(sampleData)).toBe(9);
+});

@@ -18,7 +18,10 @@ export function getData(year: string, day: string): string[] {
   return input.split("\n");
 }
 
-export async function getSolveFn(year: string, day: string): Promise<(data: string[]) => void> {
+export async function getSolveFn(
+  year: string,
+  day: string,
+): Promise<(data: string[]) => void> {
   const path = resolve(Deno.cwd(), `./${year}/${day}/mod.ts`);
   const solveFn = (await import(path)).default as (data: string[]) => void;
   assert(

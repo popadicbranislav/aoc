@@ -1,5 +1,5 @@
-import { expect } from 'jsr:@std/expect'
-import { part1, part2 } from './mod.ts'
+import { expect } from "jsr:@std/expect";
+import { part1, part2 } from "./mod.ts";
 
 const testData = `47|53
 97|13
@@ -28,12 +28,12 @@ const testData = `47|53
 75,29,13
 75,97,47,61,53
 61,13,29
-97,13,75,29,47`
+97,13,75,29,47`;
 
 Deno.test(function testPart1Solution() {
-  expect(part1(testData)).toBe(143)
-})
+  expect(part1(testData)).toBe(143);
+});
 
 Deno.test(function testPart2Solution() {
-  expect(part2(testData)).toBe(123)
-})
+  expect(part2(testData)).toBe(123);
+});
