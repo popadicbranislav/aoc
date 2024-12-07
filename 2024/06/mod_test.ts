@@ -10,12 +10,12 @@ const sampleData = `....#.....
 .#..^.....
 ........#.
 #.........
-......#...`.split("\n").map((r) => r.split(""));
+......#...`.split("\n")
 
 Deno.test(function solutionPart1Test() {
-  expect(part1(sampleData)).toBe(41);
+  expect(part1(sampleData.map((r)=> r.split("")))).toBe(41);
 });
 
 Deno.test(function solutionPart2Test() {
-  expect(part2(sampleData)).toBe(6);
+  expect(part2(sampleData.map(r=> r.split("")))).toBe(6);
 });
