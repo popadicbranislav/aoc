@@ -45,8 +45,19 @@ export async function prepareDayFiles(year: string, day: string) {
     ensureFileSync(`./${year}/${day}/README.md`);
     Deno.writeTextFileSync(
       `./${year}/${day}/mod.ts`,
-      `export default function solve(data: string[]): number {
-  console.log('hello from day ${day}', data);
+      `export function part1(input: string[]): number {
+  return input.length;
+}
+
+export function part2(input: string[]): number {
+  return input.length;
+}
+
+export default function solve(data: string[]): number {
+  console.log('Hello from day ${day}');
+
+  console.log("Result part1: ", part1(data));
+  console.log("Result part2: ", part2(data));
 
   return data.length;
 }`,
@@ -54,15 +65,19 @@ export async function prepareDayFiles(year: string, day: string) {
     Deno.writeTextFileSync(
       `./${year}/${day}/mod_test.ts`,
       `import { expect } from 'jsr:@std/expect'
-import solve from './mod.ts'
+import { part1, part2 } from "./mod.ts";
 
-Deno.test(function solutionTest() {
-  const sampleData = [
-    '1 2 3 4 5', 
-    'a b c d e'
-  ]
-  expect(solve(sampleData)).toBe(2)
-})`,
+const testInput = \`123
+456
+789\`.split("\\n");
+
+Deno.test(function solutionPart1Test() {
+  expect(part1(testInput)).toBe(0);
+});
+
+Deno.test(function solutionPart2Test() {
+  expect(part2(testInput)).toBe(0);
+});`,
     );
   }
 }
