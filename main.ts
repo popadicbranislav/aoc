@@ -17,7 +17,7 @@ if (import.meta.main) {
   }
   else{
     year = flags.year;
-    day = flags.day;
+    day = flags.day.toString().padStart(2, "0");
   }
 
 

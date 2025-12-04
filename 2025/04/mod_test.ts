@@ -13,7 +13,7 @@ const testInput =
 .@@@@@@@@.
 @.@.@@@.@.`.split("\n");
 
-Deno.test.ignore(function solutionPart1Test() {
+Deno.test(function solutionPart1Test() {
   expect(part1(testInput)).toBe(13);
 });
 
