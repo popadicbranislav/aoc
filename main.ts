@@ -1,6 +1,6 @@
 import { getData, getDate, getSolveFn, prepareDayFiles } from "@aoc/utils";
 import chalk from "chalk";
-import { parseArgs } from "jsr:@std/cli/parse-args";
+import { parseArgs } from "@std/cli/parse-args";
 
 if (import.meta.main) {
   let year: string;

@@ -13,9 +13,9 @@ R14
 L82`.split("\n");
 
 Deno.test(function solutionPart1Test() {
-  expect(part1(testInput)).toBe(0);
+  expect(part1(testInput)).toBe(3);
 });
 
 Deno.test(function solutionPart2Test() {
-  expect(part2(testInput)).toBe(0);
+  expect(part2(testInput)).toBe(6);
 });

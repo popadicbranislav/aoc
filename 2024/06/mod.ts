@@ -1,4 +1,4 @@
-import chalk from "npm:chalk";
+import chalk from "npm:chalk@5.6.2";
 
 const guard = new RegExp(/\^|>|<|v/);
 

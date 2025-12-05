@@ -1,7 +1,7 @@
 import { assert } from "@std/assert/assert";
-import { resolve } from "jsr:@std/path";
-import { ensureFileSync } from "jsr:@std/fs/ensure-file";
-import { existsSync } from "jsr:@std/fs";
+import { resolve } from "@std/path";
+import { ensureFileSync } from "@std/fs/ensure-file";
+import { existsSync } from "@std/fs";
 
 export function getDate(): { day: string; year: string } {
   const dayNumber = Deno.args[0] || new Date().getDate();
