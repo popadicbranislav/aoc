@@ -1,0 +1,14 @@
+import { expect } from 'jsr:@std/expect'
+import { part1, part2 } from "./mod.ts";
+
+const testInput = `123
+456
+789`.split("\n");
+
+Deno.test(function solutionPart1Test() {
+  expect(part1(testInput)).toBe(0);
+});
+
+Deno.test(function solutionPart2Test() {
+  expect(part2(testInput)).toBe(0);
+});
