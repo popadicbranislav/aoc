@@ -22,6 +22,6 @@ Deno.test(function solutionPart1Test() {
   expect(part1(testInput)).toBe(21);
 });
 
-Deno.test.only(function solutionPart2Test() {
+Deno.test(function solutionPart2Test() {
   expect(part2(testInput)).toBe(40);
 });
