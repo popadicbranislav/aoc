@@ -42,20 +42,23 @@ export function part1(input: string[]): number {
 export function part2(input: string[]): number {
   const data = input.map((line) => line.split(""));
 
-  const startIndex = data.shift()?.indexOf("S");
-  if (startIndex === undefined) throw new Error("Start not found");
+  const startIndex = data[0].indexOf("S");
+  if (startIndex === -1) throw new Error("Start not found");
 
   return tracePaths(data, 0, startIndex) + 1;
 }
 
-let printed = false;
+const memo = new Map<string, number>();
+
 
 function tracePaths(data: string[][], rowIndex: number, index: number): number {
   let splits = 0;
 
-  if (rowIndex > 130 && index > 130 && printed === false) {
-    printed = true;
-    console.log("Tracing at ", rowIndex, index);
+  const key = `${rowIndex}-${index}`;
+
+  const cached = memo.get(key)
+  if(cached){
+    return cached
   }
 
   const row = data[rowIndex];
@@ -72,6 +75,8 @@ function tracePaths(data: string[][], rowIndex: number, index: number): number {
   } else {
     splits += tracePaths(data, nextRow, index);
   }
+
+  memo.set(key, splits)
 
   return splits;
 }
