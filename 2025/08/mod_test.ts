@@ -23,6 +23,7 @@ const testInput = `162,817,812
 425,690,689`.split("\n");
 
 Deno.test(function solutionPart1Test() {
+  Deno.env.set("NUMBER_OF_PASSES", "10")
   expect(part1(testInput)).toBe(40);
 });
 

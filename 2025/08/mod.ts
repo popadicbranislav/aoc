@@ -61,7 +61,8 @@ export function part1(input: string[]): number {
     a - b
   );
 
-  const NUMBER_OF_PASSES = 1000;
+
+  const NUMBER_OF_PASSES = Number(Deno.env.get('NUMBER_OF_PASSES')) || 1000;
   let pass = 0;
   let circuits: Circuit[] = [];
 
